@@ -5,5 +5,8 @@
 - clean: ["~", "~/.config"]
 - link:
     ~/.config/:
-        glob: true
-        path: config/*
+      glob: true
+      path: config/*
+    ~/.zshrc:
+      force: true
+      path: zshrc
