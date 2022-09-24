@@ -1,0 +1,7 @@
+require("user.core.color")
+require("user.core.options")
+require("user.keymap")
+require("user.finder")
+require("user.formatter")
+require("user.lsp")
+require("user.dap")
