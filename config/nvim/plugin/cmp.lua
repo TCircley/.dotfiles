@@ -11,8 +11,8 @@ cmp.setup({
 		end,
 	},
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "vsnip" },
+		{ name = "nvim_lsp", priority = 2 },
+		{ name = "vsnip", priority = 1 },
 	}, {
 		{ name = "buffer" },
 		{ name = "path" },
@@ -30,7 +30,7 @@ cmp.setup({
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		-- 确认
 		["<CR>"] = cmp.mapping.confirm({
-			select = true,
+			select = false,
 			behavior = cmp.ConfirmBehavior.Replace,
 		}),
 		["<TAB>"] = cmp.mapping(function(fallback)
