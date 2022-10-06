@@ -22,7 +22,7 @@ nmap({
 	-- nvim-tree
 	{ "<leader>e", cmd("NvimTreeToggle") },
 	-- telescope
-	{ "<leader>p", cmd("Telescope find_files") },
+	{ "<leader>p", cmd("Telescope find_files hidden=true") },
 	{ "<leader>s", cmd("Telescope aerial") },
 	{ "<leader>r", cmd("Telescope asynctasks all") },
 	{ "<leader>b", cmd("Telescope buffers") },
@@ -32,9 +32,9 @@ nmap({
 	{ "gj", cmd("lua vim.diagnostic.goto_next()") },
 	-- dap
 	{ "<leader>5", cmd("DapContinue") },
-	{ "<leader>6", cmd("DapStepInto") },
-	{ "<leader>7", cmd("DapStepOut") },
-	{ "<leader>8", cmd("DapStepOver") },
+	{ "<leader>6", cmd("DapStepOver") },
+	{ "<leader>7", cmd("DapStepInto") },
+	{ "<leader>8", cmd("DapStepOut") },
 	{ "<leader>9", cmd("DapToggleBreakpoint") },
 	{ "<leader>0", cmd("DapTerminate") },
 })
