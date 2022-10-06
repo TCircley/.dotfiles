@@ -74,4 +74,8 @@ return packer.startup(function(use)
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 	-- comment
 	use("terrortylor/nvim-comment")
+	use({
+		"lewis6991/gitsigns.nvim",
+		tag = "release",
+	})
 end)
