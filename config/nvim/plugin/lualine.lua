@@ -17,16 +17,28 @@ local diagnostics = {
 	always_visible = true,
 }
 
+local function diff_source()
+	local gitsigns = vim.b.gitsigns_status_dict
+	if gitsigns then
+		return {
+			added = gitsigns.added,
+			modified = gitsigns.changed,
+			removed = gitsigns.removed,
+		}
+	end
+end
+
 local diff = {
 	"diff",
 	colored = true,
-	symbols = { added = "  ", modified = " ", removed = " " },
+	symbols = { added = " ", modified = " ", removed = " " },
 	diff_color = {
 		added = { fg = "#98be65" },
 		modified = { fg = "#ecbe7b" },
 		removed = { fg = "#ec5f67" },
 	},
 	cond = hide_in_width,
+	source = diff_source,
 }
 
 local mode = {
@@ -74,8 +86,6 @@ lualine.setup({
 		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
-		-- component_separators = { left = "", right = "" },
-		-- section_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
@@ -94,5 +104,5 @@ lualine.setup({
 		lualine_z = {},
 	},
 	tabline = {},
-	extensions = {},
+	extensions = { "nvim-tree" },
 })
