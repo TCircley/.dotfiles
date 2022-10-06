@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 export http_proxy="http://127.0.0.1:1082"
 export https_proxy="http://127.0.0.1:1082"
 
-if [[ ! -d $HOME/.zsh_env_vars ]]; then
+if [[ -e $HOME/.zsh_env_vars && -f $HOME/.zsh_env_vars ]]
+then
   source $HOME/.zsh_env_vars
 fi
